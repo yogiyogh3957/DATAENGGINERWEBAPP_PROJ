@@ -11,4 +11,5 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL", "postgres
 app.config['SECRET_KEY'] = 'ec9439cfc6c796ae2029594d'
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 db = SQLAlchemy(app)
+SQLALCHEMY_TRACK_MODIFICATIONS = False
 from fplapp import routes
