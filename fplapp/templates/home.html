@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block title %}
+    Welcome to Check FPL
+{% endblock %}
+{% block content %}
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:white">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 font-weight-normal">Check FPL</h1>
+            <p class="lead font-weight-normal">Start Your FPL Teams</p>
+            <a class="btn btn-primary" href="#">Get Started</a>
+        </div>
+        <div class="product-device box-shadow d-none d-md-block"></div>
+        <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+    </div>
+
+ <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:white">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <form method="POST" class="form-signin" style="color:white">
+            {{ form.hidden_tag() }}
+            <h1 class="h3 mb-3 font-weight-normal">
+                Please Select Team
+            </h1>
+
+            <br>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                    {{ form.team.label() }}
+                    {{ form.team(class="form-control", placeholder="team") }}
+
+                    {{ form.players.label() }}
+                    {{ form.players(class="form-control", placeholder="players") }}
+                </div>
+                <div class="col-sm">
+                    {{ form.team2.label() }}
+                    {{ form.team2(class="form-control", placeholder="team2") }}
+
+                    {{ form.players2.label() }}
+                    {{ form.players2(class="form-control", placeholder="players2") }}
+                </div>
+              </div>
+            </div>
+
+
+
+            <br>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+        </form>
+
+
+    <script>
+        var state_select = document.getElementById("team");
+        var city_select = document.getElementById("players");
+
+        var state_select2 = document.getElementById("team2");
+        var city_select2 = document.getElementById("players2");
+
+        state_select.onchange = function()  {
+
+            state = state_select.value;
+
+            fetch('/city/' + state).then(function(response) {
+
+                response.json().then(function(data) {
+                    var optionHTML = '';
+
+                    for (var city of data.cities) {
+                        optionHTML += '<option value="' + city.id + '">' + city.name + '</option>';
+                    }
+
+                    city_select.innerHTML = optionHTML;
+                })
+
+            });
+        }
+
+        state_select2.onchange = function()  {
+
+            state2 = state_select2.value;
+
+            fetch('/city2/' + state2).then(function(response) {
+
+                response.json().then(function(data) {
+                    var optionHTML = '';
+
+                    for (var city of data.cities) {
+                        optionHTML += '<option value="' + city.id + '">' + city.name + '</option>';
+                    }
+
+                    city_select2.innerHTML = optionHTML;
+                })
+
+            });
+        }
+    </script>
+
+
+        </div>
+        <div class="product-device box-shadow d-none d-md-block"></div>
+        <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+    </div>
+{% endblock %}

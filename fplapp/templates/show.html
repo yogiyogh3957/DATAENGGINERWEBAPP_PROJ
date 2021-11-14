@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}
+    Welcome to Check FPL
+{% endblock %}
+{% block content %}
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:white">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 font-weight-normal">Check FPL</h1>
+            <p class="lead font-weight-normal">Start Your FPL Teams</p>
+            <a class="btn btn-primary" href="#">Get Started</a>
+        </div>
+        <div class="product-device box-shadow d-none d-md-block"></div>
+        <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+    </div>
+
+ <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:white">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+
+            <table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">TEAM</th>
+        <th scope="col">POSITION</th>
+        <th scope="col">GOALS S</th>
+        <th scope="col">GOALS C</th>
+        <th scope="col">POINTS</th>
+        <th scope="col">PRICE</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for data in team_data %}
+
+    <tr>
+        <td>{{ data.id }}</td>
+        <td>{{ data.name }}</td>
+        <td>{{ data.team }}</td>
+        <td>{{ data.position }}</td>
+        <td>{{ data.goals_score }}</td>
+        <td>{{ data.goals_conceded }}</td>
+        <td>{{ data.total_points }}</td>
+        <td>{{ data.price }}</td>
+    </tr>
+
+    {% endfor %}
+
+  </tbody>
+</table>
+
+        </div>
+        <div class="product-device box-shadow d-none d-md-block"></div>
+        <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+    </div>
+{% endblock %}
