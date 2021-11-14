@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Blog Post</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="static/css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url_for('home_page') }}">HOME</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Post content-->
+                    <article>
+                        <!-- Post header-->
+                        <header class="mb-4">
+                            <!-- Post title-->
+                            <h1 class="fw-bolder mb-1">How This Web Works</h1>
+                            <!-- Post meta content-->
+                            <div class="text-muted fst-italic mb-2">Posted on November 12, 2021 by yogiyogh</div>
+                            <!-- Post categories-->
+                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">FPL</a>
+                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">EPL</a>
+                        </header>
+                        <!-- Preview image figure-->
+                        <figure class="mb-4"><img class="img-fluid rounded" src="{{url_for('static', filename='/homepage_images/ictfoden.png')}}" alt="icffoden" /></figure>
+                        <!-- Post content-->
+                        <section class="mb-5">
+                            <p class="fs-5 mb-4">
+                                Fantasy football is a game in which participants assemble an imaginary team of real life football players and score points based on those players actual statistical performance
+                                or their perceived contribution on the field of play.
+                            </p>
+                            <p class="fs-5 mb-4">
+                                A football statistical index, it has been developed specifically to give a verdict on a player as an FPL asset.
+                                It uses match-event data to generate a single score for three key areas: Influence, Creativity and Threat. These figures then combine to create an individual’s ICT Index score.
+                            </p>
+                            <p class="fs-5 mb-4">
+                                This is where the FPL check comes into play. check fpl will analyze the ICT data and display it in the form of a radar graph.
+                                When you are confused about which player to transfer, check fpl will help you compare data between the two players. let's check this out.
+                            </p>
+                            <h2 class="fw-bolder mb-4 mt-5">Getting Started</h2>
+                            <p class="fs-5 mb-4">
+                                First from home page you need to scroll down and you will find two drop down form. to compare 2 players you have to choose two teams and 2 players from the team to compare.
+                            </p>
+                            <img class="img-thumbnail" src="{{url_for('static', filename='/homepage_images/dropdownimage.png')}}" alt="dropdown" width="1500px">
+                            <br>
+                            <br>
+                            <p class="fs-5 mb-4">
+                                Under the Form, you will find 2 different buttons, namely the green button which will display data, where the data is higher if the value is better and the yellow button which will display smaller data is better.
+                                For examples of data displayed from higher is better are the number of goals, the number of assists, the index of creativity data, the number of saves (optimal for goalkeepers), and the number of clean sheets (optimal for defenders and goalkeepers).
+                                While the data from lower is better is the number of goals conceded, the price, the value of the price reduction, yellow cards, goals per minute, and assists per minute.
+                            </p>
+
+                            <img class="img-thumbnail" src="{{url_for('static', filename='/homepage_images/highandlowdata.png')}}" alt="User Image" width="1500px">
+                            <br>
+                            <br>
+
+                            <p class="fs-5 mb-4">
+                                From the data above, which is two graphs of data from Sadio Mane and Phil Foden are shown.
+                                From there we can determine which player is better. It can be seen from the "higher is better" data in the green box on the left.
+                                Mane clearly has more goals, total points, and creates more chances than Phil Foden,
+                                but Phil Foden makes more assists than Sadio Mane. Obviously, from this data, Mane is superior,
+                                but let's look at the chart on the right with yellow box color, namely the "lower is better" graph.
+                                There we see how effective it is if we have Phil Foden.
+                                With a much lower price and a very stable price (price_fall) from Mane, Phil Foden has better statistics,
+                                namely the number of goals and assists per minute is better than Mane, and the number of goals conceded is less.
+                            </p>
+
+
+                        </section>
+                    </article>
+                    <!-- Comments section-->
+                    <section class="mb-5">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <!-- Comment form-->
+                                <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
+                                <!-- Comment with nested comments-->
+                                <div class="d-flex mb-4">
+                                    <!-- Parent comment-->
+                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                    <div class="ms-3">
+                                        <div class="fw-bold">Commenter Name</div>
+                                         Lorem Ipsum
+                                        <!-- Child comment 1-->
+                                        <div class="d-flex mt-4">
+                                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                            <div class="ms-3">
+                                                <div class="fw-bold">Commenter Name</div>
+                                                ALorem Ipsum
+                                            </div>
+                                        </div>
+                                        <!-- Child comment 2-->
+                                        <div class="d-flex mt-4">
+                                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                            <div class="ms-3">
+                                                <div class="fw-bold">Commenter Name</div>
+                                                Lorem Ipsum
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Single comment-->
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                    <div class="ms-3">
+                                        <div class="fw-bold">Commenter Name</div>
+                                        Lorem Ipsum
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- Side widgets-->
+                <div class="col-lg-4">
+                    <!-- Search widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">Search</div>
+                        <div class="card-body">
+                            <div class="input-group">
+                                <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                                <button class="btn btn-primary" id="button-search" type="button">Go!</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Categories widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">Categories</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#!">Web Design</a></li>
+                                        <li><a href="#!">HTML</a></li>
+                                        <li><a href="#!">Freebies</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#!">JavaScript</a></li>
+                                        <li><a href="#!">CSS</a></li>
+                                        <li><a href="#!">Tutorials</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Side widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">Side Widget</div>
+                        <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="static/js/scripts.js"></script>
+    </body>
+</html>

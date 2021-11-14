@@ -17,6 +17,11 @@ def add_header(response):
     response.headers['Cache-Control'] = 'public, max-age=0'
     return response
 
+@app.route('/blogpost', methods=['POST', 'GET'])
+def blogpost():
+
+    return render_template("blogpost.html")
+
 @app.route('/', methods=['POST', 'GET'])
 def home_page():
 

@@ -14,7 +14,7 @@
    </head>
    <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Flask Market</a>
+      <a class="navbar-brand" href="#">CheckFPL</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,7 +24,7 @@
                 <a class="nav-link" href="{{ url_for('home_page') }}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">FPL Articles</a>
+                <a class="nav-link" href="{{ url_for('blogpost') }}">FPL Articles</a>
             </li>
         </ul>
       </div>
