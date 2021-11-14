@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 import requests, json
 from pprint import pprint
 import pandas as pd
