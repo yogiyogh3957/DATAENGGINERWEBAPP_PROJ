@@ -1,8 +1,3 @@
-import os.path
-
-import psycopg2
-import sqlalchemy.exc
-from werkzeug.utils import secure_filename
 from fplapp import app, db
 from flask import render_template, redirect, url_for, flash, request, jsonify, session
 from fplapp.models import FPLplayers
@@ -11,9 +6,6 @@ from fplapp.forms import QueryForm
 import matplotlib.pyplot as plt, mpld3
 import numpy as np
 import pandas as pd
-
-import random
-randlist = [1, 2]
 
 @app.after_request
 def add_header(response):
@@ -38,9 +30,8 @@ def home_page():
         player1 = FPLplayers.query.filter_by(id=form.players.data).first()
         player2 = FPLplayers.query.filter_by(id=form.players2.data).first()
 
-        high_or_low = 2
-
-        if high_or_low == 1:
+        if form.higher.data:
+            flash("HIGHER IS BETTER !!")
             df = pd.read_csv('higher.csv')
             p1image = f'https://resources.premierleague.com/premierleague/photos/players/110x140/p{player1.code}.png'
             p2image = f'https://resources.premierleague.com/premierleague/photos/players/110x140/p{player2.code}.png'
@@ -76,7 +67,8 @@ def home_page():
 
             return redirect(url_for('show_image', filename=filename))
 
-        elif high_or_low == 2:
+        if form.lower.data:
+            flash("LOWER IS BETTER !!")
             df = pd.read_csv('lower.csv')
             p1image = f'https://resources.premierleague.com/premierleague/photos/players/110x140/p{player1.code}.png'
             p2image = f'https://resources.premierleague.com/premierleague/photos/players/110x140/p{player2.code}.png'
@@ -125,7 +117,7 @@ def show_image(filename):
     p1img_url = session.get("p1", None)
     p2img_url = session.get("p2", None)
 
-    return render_template('index.html', image=f"image/{filename}", p1img_url=p1img_url, p2img_url=p2img_url)
+    return render_template('compare_page.html', image=f"image/{filename}", p1img_url=p1img_url, p2img_url=p2img_url)
 
 
 @app.route('/showteam/<team_name>/<player1_id>/<team2_name>/<player2_id>', methods=['POST', 'GET'])

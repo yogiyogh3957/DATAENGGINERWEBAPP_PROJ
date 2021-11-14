@@ -23,4 +23,5 @@ class QueryForm(FlaskForm):
     team2 = SelectField('Team2', validators=[DataRequired()], choices=team_dropdown(1))
     players2 = SelectField('Players2', validators=[DataRequired()], choices=[])
 
-    submit  = SubmitField('Compare Now!')
+    higher  = SubmitField('Higher is Better Data!')
+    lower = SubmitField('Lower is Better Data!')
