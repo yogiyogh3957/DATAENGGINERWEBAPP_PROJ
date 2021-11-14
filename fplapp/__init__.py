@@ -3,8 +3,6 @@ from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 import os
 
-import os
-
 app = Flask(__name__, template_folder='templates')
 # app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:password@localhost:5432/fpldb"
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL", "postgresql://postgres:password@localhost:5432/fpldb")
