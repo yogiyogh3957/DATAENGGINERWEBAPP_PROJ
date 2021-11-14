@@ -3,7 +3,7 @@ from flask import render_template, redirect, url_for, flash, request, jsonify, s
 from fplapp.models import FPLplayers
 from fplapp.forms import QueryForm
 
-import matplotlib.pyplot as plt, mpld3
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
